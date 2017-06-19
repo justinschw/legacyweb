@@ -1,0 +1,7 @@
+---
+
+- name: install stunnel4
+  apt:
+    name: stunnel4
+    state: present
+

@@ -7,6 +7,15 @@ lan_interface: "enp0s8"
 # domain name for internal network
 domain_name: "legacyweb.net"
 
+# email service
+email_service: "gmail"
+email_local_pop_port: 110
+email_remote_pop_port: 995
+email_local_smtp_port: 25
+email_remote_smtp_port: 465
+email_remote_pop_server: "pop.gmail.com"
+email_remote_smtp_server: "smtp.gmail.com"
+
 gateway_ip: "192.168.3.1"
 gateway_network: "192.168.3.0"
 gateway_netmask: "255.255.255.0"

@@ -1,0 +1,18 @@
+---
+
+- name: install stunnel4
+  apt:
+    name: stunnel4
+    state: present
+
+- template:
+    src: stunnel.conf
+    dest: /etc/stunnel/stunnel.conf
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- template:
+    src: stunnel4
+    dest: /etc/default/stunnel4
+    owner: root
+    mode: "u=rw,g=r,o=r"
