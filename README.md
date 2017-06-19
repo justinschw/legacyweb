@@ -18,9 +18,9 @@ The legacyweb node serves multiple purposes for your older personal computer.
 ### Router
 First and foremost, Legacyweb turns your raspberry pi into a sort of "wireless bridge" for your older computer. The 'gateway' role sets up the following:
 
-..*IPv4 forwarding
-..*DHCP server
-..*Local DNS
+* IPv4 forwarding
+* DHCP server
+* Local DNS
 
 After you install, you can actually plug your old computer's ethernet into the raspberry pi and get an IP address and an Internet connection. IPTables firewall is also set up so that the only connection to your raspberry pi from the wifi network is port 22 (SSH). This port is used for administration purposes.
 
@@ -30,15 +30,15 @@ If you want a different domain name you can edit group_vars/all and change the v
 ### Web services
 Most modern web pages are not compatible with very old versions of browsers, etc. So the main purpose of legacyweb is to provide simple, easy-to-digest web pages that can be accessed and used from older browsers such as Netscape Navigator. It is intended that the number of web services continue to grow with time. Currently the following services are implemented:
 
-..*Maps (maps.legacyweb.net) - A very simple google maps application
+* Maps (maps.legacyweb.net) - A very simple google maps application
 
 You can view all the available services from the home page: **home.legacyweb.net**
 
 The basic rule of thumb for developing web pages is:
 
-..*Keep javascript to a minimum. Only the simplest, most basic javascript is supported by old HTML standards.
-..*Do as much as you can on the server side (PHP). On the client side just use form posts and let the server do all the work.
-..*Use old HTML features such as tables, not divs.
+* Keep javascript to a minimum. Only the simplest, most basic javascript is supported by old HTML standards.
+* Do as much as you can on the server side (PHP). On the client side just use form posts and let the server do all the work.
+* Use old HTML features such as tables, not divs.
 I have found it helpful to google web dev stuff using google's Tools > Any Time > custom range feature; look only for pages from 2001 and earlier.
 
 ### Email
