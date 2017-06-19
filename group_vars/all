@@ -1,0 +1,16 @@
+# wan interface: this is the internet-facing interface; this should be your wifi
+wan_interface: "enp0s3"
+
+# lan interface: this is the lan-facing interface; this should be your ethernet
+lan_interface: "enp0s8"
+
+# domain name for internal network
+domain_name: "legacyweb.net"
+
+gateway_ip: "192.168.3.1"
+gateway_network: "192.168.3.0"
+gateway_netmask: "255.255.255.0"
+gateway_dhcp_start: "192.168.3.2"
+gateway_dhcp_end: "192.168.3.254"
+gateway_broadcast: "192.168.3.255"
+gateway_dhcp_lease_length: "12h"

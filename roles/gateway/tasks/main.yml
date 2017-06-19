@@ -1,0 +1,41 @@
+---
+
+- name: install dnsmasq
+  apt:
+    name: dnsmasq
+    state: present
+
+- name: install redis server for hostname-page lookup
+  apt:
+    name: redis-server
+    state: present
+
+- template:
+    src: interfaces
+    dest: /etc/network/interfaces
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- template:
+    src: dnsmasq.conf
+    dest: /etc/dnsmasq.conf
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- template:
+    src: sysctl.conf
+    dest: /etc/sysctl.conf
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- template:
+    src: iptables.rules
+    dest: /etc/iptables.rules
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- template:
+    src: add-private-host
+    dest: /usr/bin/add-private-host
+    owner: root
+    mode: "u=rwx,g=rx,o=rx"

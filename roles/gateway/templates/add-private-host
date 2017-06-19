@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $# != 2 ]; then
+   echo "Usage: add-private-host [hostname] [path]"
+   exit 1
+fi
+
+echo "{{ gateway_ip }} $1" >> /etc/hosts
+redis-cli SET $1 $2
