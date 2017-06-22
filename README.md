@@ -44,6 +44,28 @@ I have found it helpful to google web dev stuff using google's Tools > Any Time 
 ### Email
 Most email services today use TLS for the connection in order to keep it secure. However, a lot of older email clients do not support this TLS but do email over a plain connection. Legacyweb sets up a 'tunnel' using stunnel4 which your old email client can use to establish connections to sites like gmail (default), gmx or pretty much any email service.
 
+I personally use gmx but the default email service used in this project is gmail. You can change it to whatever you like. Just edit group_vars/all and change the following:
+
+* email_service: this is for naming purposes. Default is gmail.
+* email_local_pop_port: this is the pop port that your raspberry pi is listening on. You can leave it alone.
+* email_remote_pop_port: this is the pop port the remote (TLS-enabled) email service is listening on. Match it to whatever your email service uses.
+* email_local_smtp_port: this is the smtp port that your raspberry pi is listening on. You can leave it alone.
+* email_remote_pop_port: this is the smtp port the remote (TLS-enabled) email service is listening on. Match it to whatever your email service uses.
+* email_remote_pop_server: Your email service's remote pop server.
+* email_remote_smtp_server: Your email service's remote smtp server.
+* ca_file_path: This is the direct path to the CA cert that your email service uses to authenticate. It should be under /etc/ssl/certs/ so look for the one that is named the same as what authorizes your email service.
+
+When you set up your email client on your old machine, set the username and password the same way you would for an email client (username is usually your full email, as for gmail), but for your smtp and pop servers, point them at 192.168.3.1, port 110 for pop and port 25 for smtp (assuming you did not change the gateway IP or ports) and make sure to enable SMTP authentication and use the same credentials there.
+
+If you use a really old client that doesn't support smtp authentication, there is still a way to get this working using a tool called postfix; however I have lost the instructions on how to do that and haven't gotten around to including those here.
+
+For Gmail users: when you try to log on, it will block you. That is because for some reason google blocks stunnel and says it is not secure. You will get an email about it, and you can optionally enable access. AFAIK stunnel is pretty secure so as long as nobody else has access to the unencrypted channel between your old PC and your raspberry pi, you should be good.
+
+For other GMX users, you can get the information for configuring email here:
+legacyweb.wikia.com
+
+The rest of you are on your own. :)
+
 ### Local DNS
 One of the functions of DNSmasq is to serve as a localized, LAN-only DNS server for your old computer. This is basically to make it easy for you to access the internal pages. Pretty much all hostnames will be mapped to the same address (your gateway IP) since for this project we are hosting all web services from the same raspberry pi. But from the actual web services we determine which actual page to forward to.
 

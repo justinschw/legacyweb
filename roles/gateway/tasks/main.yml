@@ -39,3 +39,12 @@
     dest: /usr/bin/add-private-host
     owner: root
     mode: "u=rwx,g=rx,o=rx"
+
+- service:
+    name: dnsmasq
+    enabled: yes
+    state: restarted
+
+- service:
+    name: redis-server
+    enabled: yes

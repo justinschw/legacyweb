@@ -16,3 +16,9 @@
     dest: /etc/default/stunnel4
     owner: root
     mode: "u=rw,g=r,o=r"
+
+- service:
+    name: stunnel4
+    enabled: yes
+    state: restarted
+

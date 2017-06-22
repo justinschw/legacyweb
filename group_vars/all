@@ -15,6 +15,7 @@ email_local_smtp_port: 25
 email_remote_smtp_port: 465
 email_remote_pop_server: "pop.gmail.com"
 email_remote_smtp_server: "smtp.gmail.com"
+ca_file_path: "/etc/ssl/certs/GeoTrust_Global_CA.pem"
 
 gateway_ip: "192.168.3.1"
 gateway_network: "192.168.3.0"
