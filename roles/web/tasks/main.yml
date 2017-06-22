@@ -1,0 +1,11 @@
+---
+
+- name: install apache2
+  apt:
+    name: apache2
+    state: present
+
+- name: install php
+  apt:
+    name: libapache2-mod-php
+    state: present
