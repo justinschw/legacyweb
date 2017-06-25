@@ -11,11 +11,30 @@ domain_name: "legacyweb.net"
 email_service: "gmail"
 email_local_pop_port: 110
 email_remote_pop_port: 995
-email_local_smtp_port: 25
+email_local_smtp_port: 9025
 email_remote_smtp_port: 465
-email_remote_pop_server: "pop.gmail.com"
-email_remote_smtp_server: "smtp.gmail.com"
-ca_file_path: "/etc/ssl/certs/GeoTrust_Global_CA.pem"
+email_remote_pop_server: "pop.gmx.com"
+email_remote_smtp_server: "mail.gmx.com"
+ca_file_path: "/etc/ssl/certs/thawte_Primary_Root_CA.pem"
+# FOR GMAIL USERS
+# Comment out the above lines for:
+# * email_service
+# * email_remote_pop_server
+# * email_remote_smtp_server
+# * ca_file_path
+# And then uncomment the following lines.
+# email_remote_pop_server: "pop.gmail.com"
+# email_remote_smtp_server: "smtp.gmail.com"
+# ca_file_path: "/etc/ssl/certs/GeoTrust_Global_CA.pem"
+postfix_dest_port: 587
+postfix_src_port: 25
+
+# CHANGE ME
+# You will need to change these to your credentials
+# *ONLY IF* you are using a client that doesn't
+# support SMTP authentication, i.e. outlook 4.0
+email_username: "myuser@gmx.com"
+email_password: "mypass"
 
 gateway_ip: "192.168.3.1"
 gateway_network: "192.168.3.0"

@@ -5,6 +5,11 @@
     name: stunnel4
     state: present
 
+- name: install postfix
+  apt:
+    name: postfix
+    state: present
+
 - template:
     src: stunnel.conf
     dest: /etc/stunnel/stunnel.conf
@@ -16,6 +21,30 @@
     dest: /etc/default/stunnel4
     owner: root
     mode: "u=rw,g=r,o=r"
+
+- service:
+    name: stunnel4
+    enabled: yes
+    state: restarted
+
+- template:
+    src: main.cf
+    dest: /etc/postfix/main.cf
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- template:
+    src: sasl_passwd
+    dest: /etc/postfix/sasl_passwd
+    owner: root
+    group: postfix
+    mode: "u=rw,g=r,o="
+
+- shell: "postmap /etc/postfix/sasl_passwd"
+
+- shell: "newaliases"
+
+- shell: "postconf compatibility_level=2"
 
 - service:
     name: stunnel4

@@ -1,0 +1,1 @@
+[{{ email_remote_smtp_server }}]:{{ postfix_dest_port }} {{ email_username }}:{{ email_password }}
