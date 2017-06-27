@@ -19,6 +19,7 @@ readme_directory = no
 
 relayhost = [{{ email_remote_smtp_server }}]:{{ postfix_dest_port}}
 # SASL Settings
+mynetworks = {{ gateway_network_with_subnet }}
 smtp_use_tls = yes
 smtpd_sasl_auth_enable = yes
 smtp_sasl_auth_enable = yes

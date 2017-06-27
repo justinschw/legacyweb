@@ -8,7 +8,7 @@ lan_interface: "enp0s8"
 domain_name: "legacyweb.net"
 
 # email service
-email_service: "gmail"
+email_service: "gmx"
 email_local_pop_port: 110
 email_remote_pop_port: 995
 email_local_smtp_port: 9025
@@ -23,6 +23,7 @@ ca_file_path: "/etc/ssl/certs/thawte_Primary_Root_CA.pem"
 # * email_remote_smtp_server
 # * ca_file_path
 # And then uncomment the following lines.
+# email_service: "gmail"
 # email_remote_pop_server: "pop.gmail.com"
 # email_remote_smtp_server: "smtp.gmail.com"
 # ca_file_path: "/etc/ssl/certs/GeoTrust_Global_CA.pem"
@@ -38,6 +39,7 @@ email_password: "mypass"
 
 gateway_ip: "192.168.3.1"
 gateway_network: "192.168.3.0"
+gateway_network_with_subnet: "192.168.3.0/24"
 gateway_netmask: "255.255.255.0"
 gateway_dhcp_start: "192.168.3.2"
 gateway_dhcp_end: "192.168.3.254"
