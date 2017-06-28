@@ -1,9 +1,10 @@
 #!/bin/bash
 
-if [ $# != 2 ]; then
-   echo "Usage: add-private-host [hostname] [path]"
+if [ $# != 3 ]; then
+   echo "Usage: add-private-host [hostname] [path] [category]"
    exit 1
 fi
 
 echo "{{ gateway_ip }} $1" >> /etc/hosts
 redis-cli SET $1 $2
+redis-cli -n 1 LPUSH $3 $1
