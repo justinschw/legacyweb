@@ -45,3 +45,6 @@ gateway_dhcp_start: "192.168.3.2"
 gateway_dhcp_end: "192.168.3.254"
 gateway_broadcast: "192.168.3.255"
 gateway_dhcp_lease_length: "12h"
+
+# CHANGE ME
+google_api_key: "INSERT_KEY_HERE"

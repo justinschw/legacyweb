@@ -98,7 +98,7 @@ function loadHtml(form) {
 <body bgcolor="green">
 <?php
 // Fill in API key here
-$api_key="AIzaSyB5VP16pTnbQBlPIDfMc47uZKNEQYIGXbM";
+$api_key="{{ google_api_key }}";
 // Fill in other parameters here
 $zoom=13;
 $map_length=550;
