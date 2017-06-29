@@ -10,6 +10,11 @@
     name: redis-server
     state: present
 
+- name: install redis tools
+  apt:
+    name: redis-tools
+    state: present
+
 - template:
     src: interfaces
     dest: /etc/network/interfaces

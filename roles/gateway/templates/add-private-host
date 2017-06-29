@@ -7,4 +7,13 @@ fi
 
 echo "{{ gateway_ip }} $1" >> /etc/hosts
 redis-cli SET $1 $2
-redis-cli -n 1 LPUSH $3 $1
+
+ISMEMBER=`redis-cli -n 1 LRANGE "$3" 0 -1 | grep $1`
+
+if [ "$ISMEMBER" == "" ]; then
+    echo "Adding $1 to $3"
+    redis-cli -n 1 LPUSH "$3" "$1"
+else
+    echo "$1 already a member of $3"
+fi
+

@@ -9,3 +9,34 @@
   apt:
     name: libapache2-mod-php
     state: present
+
+- name: install php-redis
+  apt:
+    name: php-redis
+    state: present
+
+- shell: "phpdismod igbinary && phpenmod igbinary && phpenmod redis"
+
+- template:
+    src: main.php
+    dest: /var/www/html/main.php
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- file:
+    path: "/var/www/html/images/"
+    state: directory
+    mode: "u=rwx,g=rx,o=rx"
+
+- copy:
+    src: legacyweb_logo.gif
+    dest: /var/www/html/images/legacyweb_logo.gif
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- shell: "add-private-host home.{{ domain_name }} main.php Home"
+
+- service:
+    name: apache2
+    enabled: yes
+    state: restarted
