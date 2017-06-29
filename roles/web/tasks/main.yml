@@ -23,6 +23,16 @@
     owner: root
     mode: "u=rw,g=r,o=r"
 
+- template:
+    src: index.php
+    dest: /var/www/html/index.php
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- file:
+    path: "/var/www/html/index.html"
+    state: absent
+
 - file:
     path: "/var/www/html/images/"
     state: directory
@@ -34,7 +44,7 @@
     owner: root
     mode: "u=rw,g=r,o=r"
 
-- shell: "add-private-host home.{{ domain_name }} main.php Home"
+- shell: "add-private-host home.{{ domain_name }} main.php Home 'Main Page'"
 
 - service:
     name: apache2
