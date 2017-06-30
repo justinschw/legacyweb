@@ -1,5 +1,17 @@
 ---
 
+- name: Install php-geoip
+  apt:
+    name: php-geoip
+    state: present
+
+- name: Install geoip-database-extra
+  apt:
+    name: geoip-database-extra
+    state: present
+
+- shell: "phpenmod redis"
+
 - file:
     path=/var/www/html/gmaps
     state=directory
@@ -7,10 +19,32 @@
     mode="u=rwx,g=rx,o=rx"
 
 - template:
-    src="gmaps-ramdisk.sh"
-    dest="/usr/bin/gmaps-ramdisk"
+    src=gmaps-ramdisk.sh
+    dest=/usr/bin/gmaps-ramdisk
     owner=root
     mode="u=rwx,g=rx,o=rx"
 
 - shell: "gmaps-ramdisk"
+
+- template:
+    src=gmaps.php
+    dest=/var/www/html/gmaps.php
+    owner=root
+    mode="u=rw,g=r,o=r"
+
+- copy:
+    src: legmap_logo.jpg
+    dest: /var/www/html/images/legmap_logo.jpg
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+
+- shell: "add-private-host maps.legacyweb.net gmaps.php 'Useful Tools' 'Maps & Directions'"
+
+- service:
+    name: apache2
+    enabled: yes
+    state: restarted
+
+- shell: "chmod 777 /var/www/html/gmaps"
 
