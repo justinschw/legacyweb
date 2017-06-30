@@ -30,7 +30,19 @@ If you want a different domain name you can edit group_vars/all and change the v
 ### Web services
 Most modern web pages are not compatible with very old versions of browsers, etc. So the main purpose of legacyweb is to provide simple, easy-to-digest web pages that can be accessed and used from older browsers such as Netscape Navigator. It is intended that the number of web services continue to grow with time. Currently the following services are implemented:
 
-* Maps (maps.legacyweb.net) - A very simple google maps application
+* Maps (maps.legacyweb.net) - A very simple google maps application.
+
+**Note on Maps:** You will have to update the google_api_key varilable in group_vars/all with your Google API key before installing.  You can get it at: https://console.developers.google.com/. Click "Credentials" on the left pane, then "Create credentials" to get your API key. On the dashboard you will have to enable the following APIs:
+
+* Google Static Maps API
+* Google Maps Directions API
+* Google Places API Web Service
+* Google Maps Distance Matrix API
+* Google Maps Elevation API
+* Google Maps Geocoding API
+* Google Maps Geolocation API
+* Google Maps Roads API
+* Google Maps TimeZone API
 
 You can view all the available services from the home page: **home.legacyweb.net**
 
