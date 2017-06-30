@@ -45,6 +45,3 @@
     name: apache2
     enabled: yes
     state: restarted
-
-- shell: "chmod 777 /var/www/html/gmaps"
-
