@@ -94,3 +94,10 @@ where 'page' includes the relative path and filename to the page under the /var/
 This is what we use to install the maps page for legacyweb.
 
 Note that all hostnames must end with your domain name: (service).(domain name)
+
+### Windows share
+Legacyweb also comes with samba installed. If you are running on a raspberry pi then this works out of the box, otherwise you can edit the variables in group_vars/all. The default workgroup name is "LEGACYWEB" and the user is pi. The share is called "WINSHARE."
+
+You can access this from windows by searching through the network places or by creating a mapped network drive and typing in:
+`\\192.168.3.1\winshare`
+

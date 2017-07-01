@@ -1,0 +1,19 @@
+---
+
+- name: install samba
+  apt:
+    name: samba
+    state: present
+
+- template:
+    src: smb.conf
+    dest: /etc/samba/smb.conf
+    owner: "root"
+    mode: "u=rw,g=r,o=r"
+
+- file:
+    path=/home/{{ smb_user }}/winshare
+    state=directory
+    owner={{ smb_user }}
+    mode="u=rwx,g=rx,o=rx"
+

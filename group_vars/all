@@ -48,3 +48,7 @@ gateway_dhcp_lease_length: "12h"
 
 # CHANGE ME
 google_api_key: "INSERT_KEY_HERE"
+
+# Samba settings
+smb_user: "pi"
+smb_workgroup: "LEGACYWEB"
