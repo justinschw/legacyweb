@@ -183,10 +183,12 @@ if(isset($_GET['q']) && $_GET['q']!="") {
 ?>
 
 <!-- Begin main table -->
+<center>
 <table width="800px" border=1 bgcolor="#FFFFE0">
 <!-- Top frame -->
 <td colspan=2>
-<img src="/images/legmap_logo.jpg">
+  <!-- <img src="/images/legmap_logo.jpg"> -->
+  <h1>LegacyWeb - Maps</h1>
 <br>
 <br>
 <FORM NAME="placeSearchForm">
@@ -238,7 +240,7 @@ Search for a nearby place: &nbsp <INPUT TYPE="TEXT" NAME="q"> <INPUT TYPE="SUBMI
 <tr>
 <?php
 if($map_type == "search") {
-	file_put_contents("/var/www/html/gmaps/mapimg.jpg", file_get_contents($search_map));
+	file_put_contents("/var/www/html/images-tmp/mapimg.jpg", file_get_contents($search_map));
 ?>
 <FORM name="directions">
 <?php
@@ -247,7 +249,7 @@ if($map_type == "search") {
 	}
 ?>
 <td colspan=2>
-<img src="/gmaps/mapimg.jpg?<?=time()?>">
+<img src="/images-tmp/mapimg.jpg?<?=time()?>">
 <!-- <img src="<?=$search_map?>"> -->
 </td>
 <tr>
@@ -292,10 +294,10 @@ foreach($result_json->results as $result) {
 <td><center><h3>NO RESULT</h3></center></td>
 <?php
 	} else { // Results if-statement
-	file_put_contents("/var/www/html/gmaps/mapimg.jpg", file_get_contents($directions_map));
+	file_put_contents("/var/www/html/images-tmp/mapimg.jpg", file_get_contents($directions_map));
 ?>
 <td>
-<img src="/gmaps/mapimg.jpg?<?=time()?>">
+<img src="/images-tmp/mapimg.jpg?<?=time()?>">
 <!-- <img src="<?=$directions_map?>"> -->
 </td>
 <tr>
@@ -329,10 +331,10 @@ Choose route: &nbsp
 <?php
 	} // Results if-statement
 } else {
-	file_put_contents("/var/www/html/gmaps/mapimg.jpg", file_get_contents($default_map));
+	file_put_contents("/var/www/html/images-tmp/mapimg.jpg", file_get_contents($default_map));
 ?>
 <td>
-<img src="/gmaps/mapimg.jpg?<?=time()?>">
+<img src="/images-tmp/mapimg.jpg?<?=time()?>">
 <!-- <img src="<?=$default_map?>"> -->
 </td>
 <?php
@@ -344,6 +346,7 @@ Choose route: &nbsp
 </td>
 <!-- End main table -->
 </table>
+</center>
 
 </body>
 </html>

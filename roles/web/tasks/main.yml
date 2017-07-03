@@ -50,3 +50,17 @@
     name: apache2
     enabled: yes
     state: restarted
+
+- file:
+    path=/var/www/html/images-tmp
+    state=directory
+    owner=root
+    mode="u=rwx,g=rx,o=rx"
+
+- template:
+    src=images-ramdisk.sh
+    dest=/usr/bin/images-ramdisk
+    owner=root
+    mode="u=rwx,g=rx,o=rx"
+
+- shell: "images-ramdisk"

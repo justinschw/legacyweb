@@ -12,20 +12,6 @@
 
 - shell: "phpenmod redis"
 
-- file:
-    path=/var/www/html/gmaps
-    state=directory
-    owner=root
-    mode="u=rwx,g=rx,o=rx"
-
-- template:
-    src=gmaps-ramdisk.sh
-    dest=/usr/bin/gmaps-ramdisk
-    owner=root
-    mode="u=rwx,g=rx,o=rx"
-
-- shell: "gmaps-ramdisk"
-
 - template:
     src=gmaps.php
     dest=/var/www/html/gmaps.php
