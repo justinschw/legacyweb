@@ -45,6 +45,10 @@
     owner: root
     mode: "u=rwx,g=rx,o=rx"
 
+- shell: "ifdown {{ wan_interface }} && ifup {{ wan_interface }}"
+
+- shell: "ifdown {{ lan_interface }} && ifup {{ lan_interface }}"
+
 - service:
     name: dnsmasq
     enabled: yes

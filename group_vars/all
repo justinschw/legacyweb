@@ -1,8 +1,8 @@
 # wan interface: this is the internet-facing interface; this should be your wifi
-wan_interface: "enp0s3"
+wan_interface: "wlan0"
 
 # lan interface: this is the lan-facing interface; this should be your ethernet
-lan_interface: "enp0s8"
+lan_interface: "eth0"
 
 # domain name for internal network
 domain_name: "legacyweb.net"
