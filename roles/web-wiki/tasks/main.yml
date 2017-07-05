@@ -1,14 +1,5 @@
 ---
 
-- name: Add unstable repo
-  apt_repository:
-    repo: deb http://http.us.debian.org/debian unstable main non-free contrib
-    state: present
-
-- apt:
-    update_cache: yes
-    cache_valid_time: 86400 #One day
-    
 - template:
     src=wiki.php
     dest=/var/www/html/wiki.php
