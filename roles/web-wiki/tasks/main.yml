@@ -6,5 +6,11 @@
     owner=root
     mode="u=rw,g=r,o=r"
 
+- copy:
+    src: wikilogo.gif
+    dest: /var/www/html/images/legacyweb_logo.gif
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
 - shell: "add-private-host wikipedia.legacyweb.net wiki.php 'Information' 'Wikipedia'"
 

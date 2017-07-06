@@ -2,13 +2,12 @@
   <head>
     <title>Legacyweb - Wikipedia</title>
   </head> 
-  <body>
+  <body bgcolor="black">
     <center>
-      <table width="75%" border=1>
+      <table width="75%" border=1 bgcolor="white">
 	<tr>
-	  <td>
+	  <td bgcolor="#99a3a4">
 	    <h1>Wikipedia</h1>
-	    <br>
 	    <FORM NAME="searchForm">
 	      <INPUT TYPE=HIDDEN NAME="display" VALUE="searchList">
 	      Search: &nbsp <INPUT TYPE="TEXT" NAME="q"> <INPUT TYPE="SUBMIT" NAME="searchButton" VALUE="Go">
@@ -70,7 +69,11 @@
 		 }
 		 print("</td>");
 		 print("</table>");
-	       }
+      }
+      if(!isset($_GET["display"])) {
+      // Main page
+      print("<center><h3>Welcome to LegacyWeb Wikipedia.</h3><br><img src='images/wikilogo.gif'><br><small>Copyright WikiMedia</small><br><br>Enter a query above to get a list of wikipedia pages.<br><br></center>");
+      }
 	       ?>
 	  </td>
       </table>
