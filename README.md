@@ -32,6 +32,7 @@ Most modern web pages are not compatible with very old versions of browsers, etc
 
 * Maps (maps.legacyweb.net) - A very simple google maps application.
 * Wikipedia (wikipedia.legacyweb.net) - A very stripped down version of wikipedia
+* Weather (weather.legacyweb.net) - A simple weather app that lets you view today's weather as well as a five-day forecast.
 
 **Note on Maps:** You will have to update the google_api_key varilable in group_vars/all with your Google API key before installing.  You can get it at: https://console.developers.google.com/. Click "Credentials" on the left pane, then "Create credentials" to get your API key. On the dashboard you will have to enable the following APIs:
 
@@ -44,6 +45,8 @@ Most modern web pages are not compatible with very old versions of browsers, etc
 * Google Maps Geolocation API
 * Google Maps Roads API
 * Google Maps TimeZone API
+
+**Note on Weather:** You need an openweathermaps api key. Update weather_api_key in group_vars/all.
 
 You can view all the available services from the home page: **home.legacyweb.net**
 
