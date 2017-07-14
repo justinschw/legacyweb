@@ -1,0 +1,31 @@
+---
+
+- name: Install php-geoip
+  apt:
+    name: php-geoip
+    state: present
+
+- name: Install geoip-database-extra
+  apt:
+    name: geoip-database-extra
+    state: present
+
+- name: Install php-gd
+  apt:
+    name: php-gd
+    state: present
+
+- shell: "phpenmod gd"
+
+- template:
+    src=weather.php
+    dest=/var/www/html/weather.php
+    owner=root
+    mode="u=rw,g=r,o=r"
+
+- shell: "add-private-host weather.legacyweb.net weather.php 'Useful Tools' 'Weather'"
+
+- service:
+    name: apache2
+    enabled: yes
+    state: restarted
