@@ -47,7 +47,8 @@ gateway_broadcast: "192.168.3.255"
 gateway_dhcp_lease_length: "12h"
 
 # CHANGE ME
-google_api_key: "INSERT_KEY_HERE"
+google_api_key: "INSERT_GOOGLE_API_KEY_HERE"
+weather_api_key: "INSERT_WEATHER_API_KEY_HERE"
 
 # Samba settings
 smb_user: "pi"
