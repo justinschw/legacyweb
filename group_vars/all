@@ -55,4 +55,4 @@ smb_user: "pi"
 smb_workgroup: "LEGACYWEB"
 
 # YouTube stuff
-vlc_web_pass = "abcd1234"
+vlc_web_pass: "abcd1234"
