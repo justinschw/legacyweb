@@ -152,8 +152,9 @@ if(isset($_GET["alternateZip"]) && $_GET["alternateZip"] != "") {
 <head>
 <title>LegacyWeb - Weather</title>
 </head>
-<body>
-<table width=800px border=1>
+<body bgcolor="#0000A0">
+<center>
+<table width=800px border=1 bgcolor="#FFFFFF">
 <td colspan=2>
 <h1>Weather</h1>
 <br>
@@ -299,5 +300,6 @@ if(isset($_GET["reportType"]) && $_GET["reportType"] == "5day") {
 ?>
 </td>
 </table>
+</center>
 </body>
 </html>

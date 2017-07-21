@@ -53,3 +53,6 @@ weather_api_key: "INSERT_WEATHER_API_KEY_HERE"
 # Samba settings
 smb_user: "pi"
 smb_workgroup: "LEGACYWEB"
+
+# YouTube stuff
+vlc_web_pass = "abcd1234"

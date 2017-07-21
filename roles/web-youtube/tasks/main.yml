@@ -1,0 +1,15 @@
+---
+
+- template:
+    src: tube.php
+    dest: /var/www/html/tube.php
+    owner: root
+    mode: "u=rw,g=r,o=r"
+
+- shell: "add-private-host youtube.{{ domain_name }} tube.php Entertainment 'YouTube Videos'"
+
+- service:
+    name: apache2
+    enabled: yes
+    state: restarted
+
